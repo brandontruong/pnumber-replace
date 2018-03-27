@@ -1,0 +1,34 @@
+{
+  "name": "P number replacement",
+  "version": "0.1",
+  "description": "This extension will find and replace the p number to actual developer name",
+  "manifest_version": 2,
+  "permissions": [
+    "https://github.aus.thenational.com/*",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.aus.thenational.com/*"
+      ],
+      "js": [
+        "jquery-3.3.1.min.js",
+        "config.js",
+        "contentScript.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
